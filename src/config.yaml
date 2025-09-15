@@ -1,0 +1,20 @@
+band_num: 30
+data_file: ../input_data/sample_FR_data.txt
+default_q: 4.0
+dip_alpha: '1'
+eloud_file: ../data/ISO_226_2023_75phon.txt
+eq1_file: eq_1.txt
+eq2_file: eq_2.txt
+high_cutoff1: 5000.0
+high_cutoff2: 3000.0
+hrtf_file: ''
+k_file: ../data/ISO_226_2023_75phon.txt
+low_cutoff1: 80.0
+low_cutoff2: 80.0
+max_q: 8.0
+min_q: 1.0
+model_str: R MSP3
+output_folder: ../output
+slope: -4.5
+target: 0.0
+target_file: ../data/target_curve_Flat.txt

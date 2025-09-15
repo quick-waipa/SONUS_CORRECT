@@ -1,0 +1,43 @@
+# MIT License
+
+Copyright (c) 2025 Quick Waipa
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+# About Input Data
+
+The numerical dataset included in this repository, 
+"ISO_226_2023_75phon.txt," is based on independent calculations 
+using the equations defined in ISO 226:2023 
+"Acoustics — Normal equal-loudness-level contours."
+
+This repository does not contain the ISO standard document itself, 
+nor does it reproduce the numerical tables or figures published in 
+the official standard. Therefore, this repository does not copy or 
+redistribute ISO copyrighted materials.
+
+To obtain the official ISO 226:2023 standard, please purchase a 
+licensed copy from ISO or your national standards body 
+(e.g., Japanese Standards Association).
+
+This repository is not affiliated with or endorsed by ISO in any way. 
+The data and source code in this repository are provided under the 
+MIT License and may be used, modified, and redistributed freely. 
+Use of this repository is at your own risk.
