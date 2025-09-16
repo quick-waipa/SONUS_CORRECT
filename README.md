@@ -3,6 +3,8 @@
 
 [関連記事一覧](https://quickwaipa.com/sonus_correct/sonus_correct.html)
     
+[English README is here](https://github.com/quick-waipa/SONUS_CORRECT/blob/main/README_ENG.md)  
+    
 ***
 - Ver.1.00 2025/09/15
    - 新規リリース
