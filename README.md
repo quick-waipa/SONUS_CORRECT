@@ -6,6 +6,8 @@
 [English README is here](https://github.com/quick-waipa/SONUS_CORRECT/blob/main/README_ENG.md)  
     
 ***
+- Ver.1.10 2025/09/22
+   - MacOS用の出力データ(.ymlファイル)を作成出来るようにした
 - Ver.1.00 2025/09/15
    - 新規リリース
 - テスト環境: 
@@ -89,6 +91,8 @@ EQデータファイルは以下の2種類が出力されます。
 #### [Output File Name]
  + **EQ(artificial flat target)File Name:** 出力データ（人為的フラットターゲットのEQデータ）のファイル名（任意）
  + **EQ(natural flat target)File Name:** 出力データ（ナチュラルフラットターゲットのEQデータ）のファイル名（任意）
+ + **EQ data file .yml(for Mac):** 出力データ（.yml形式のEQデータ）のファイル名（任意）
+ + **Left or Right:** スピーカーの左右（"L"もしくは"R"を入力）
  
 #### [Application of Characteristic Filter to Frequency Response]
  + **Slope [dB/oct]:** 普段聴く楽曲の周波数特性のスロープを設定（推奨値：3～5程度）。

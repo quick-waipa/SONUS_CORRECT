@@ -6,6 +6,8 @@
 [日本語版 README はこちら](https://github.com/quick-waipa/SONUS_CORRECT/blob/main/README.md)  
     
 ***
+- Ver.1.10 2025/09/22
+   - Added support for generating output data (.yml files) for macOS
 - Ver.1.00 2025/09/15
    - New Release
 - Test Environment: 
@@ -89,6 +91,8 @@ Each input data point is described below.
 #### [Output File Name]
  + **EQ(artificial flat target)File Name:** Output data filename (artificial flat target EQ data) (optional)
  + **EQ(natural flat target)File Name:** Output data filename (natural flat target EQ data) (optional)
+ + **EQ data file .yml (for Mac):** Output data filename (in .yml format for EQ data) (optional)
+ + **Left or Right:** Speaker side (enter “L” or “R”)
  
 #### [Application of Characteristic Filter to Frequency Response]
  + **Slope [dB/oct]:** Set the slope for the frequency response of music you typically listen to (recommended value: around 3 to 5).
