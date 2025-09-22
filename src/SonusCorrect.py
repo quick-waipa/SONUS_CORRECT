@@ -19,7 +19,9 @@ import EqMake
 import Math
 import Utils
 
-Ver = "1.00"
+from Utils import write_eq_settings_yml0, write_eq_settings_yml2, write_eq_settings_yml3
+
+Ver = "1.10"
 
 def config_file_path(relative_path: str) -> str:
     base_path = os.path.abspath(".")
@@ -48,6 +50,8 @@ def load_yaml():
         'hrtf_file',
         'eq1_file',
         'eq2_file',
+        'eq_file_yml',
+        'lr',
         'slope',
         'band_num',
         'max_q',
@@ -128,7 +132,7 @@ def create_gui():
     font_jp = ("Meiryo", 10)
     
     # Window Size
-    root.geometry("1010x900")
+    root.geometry("1010x980")
     
     # Make window height unchangeable
     root.resizable(width=False, height=False)
@@ -143,8 +147,8 @@ def create_gui():
     ttk.Label(parent, text=' [Output Folder] --------------------------------------------------------------------------------------------------------------------------', font=font_b).grid(row=0, column=0, columnspan=3, sticky="w", pady=5, padx=0)
     ttk.Label(parent, text=' [Input Data] -----------------------------------------------------------------------------------------------------------------------------', font=font_b).grid(row=2, column=0, columnspan=3, sticky="w", pady=5, padx=0)
     ttk.Label(parent, text=' [Output File Name] -----------------------------------------------------------------------------------------------------------------------', font=font_b).grid(row=6, column=0, columnspan=3, sticky="w", pady=5, padx=0)
-    ttk.Label(parent, text=' [Frequency Response Of The Music Track] ------------------------------------------------------------------------------', font=font_b).grid(row=9, column=0, columnspan=3, sticky="w", pady=5, padx=0)
-    ttk.Label(parent, text=' [Make EQ Curves] -------------------------------------------------------------------------------------------------------------------------', font=font_b).grid(row=11, column=0, columnspan=3, sticky="w", pady=5, padx=0)
+    ttk.Label(parent, text=' [Frequency Response Of The Music Track] ------------------------------------------------------------------------------', font=font_b).grid(row=11, column=0, columnspan=3, sticky="w", pady=5, padx=0)
+    ttk.Label(parent, text=' [Make EQ Curves] -------------------------------------------------------------------------------------------------------------------------', font=font_b).grid(row=13, column=0, columnspan=3, sticky="w", pady=5, padx=0)
     ttk.Label(parent, text=' ', font=font_b).grid(row=24, column=0, columnspan=3, sticky="w", pady=0, padx=0)
     
     entry_frames = []
@@ -152,7 +156,7 @@ def create_gui():
     # Display each data
     row_index = 0
     for key in parameter_order:
-        if row_index == 0 or row_index == 2 or row_index == 6 or row_index == 9 or row_index == 11:
+        if row_index == 0 or row_index == 2 or row_index == 6 or row_index == 11 or row_index == 13:
             row_index += 1
         
         value = data_config.get(key, "")
@@ -226,7 +230,9 @@ def calculate():
     #================================================================================
     band_num  =  int(config['band_num'])    
     eq1_file  =  str(config['eq1_file'])    
-    eq2_file  =  str(config['eq2_file'])   
+    eq2_file  =  str(config['eq2_file'])
+    eqyml_file = str(config['eq_file_yml'])
+    lr         = str(config['lr'])
     model_str =  str(config['data_file'])  
 
     max_q     =  float(config['max_q'])
@@ -273,11 +279,17 @@ def calculate():
     
     # EQ Data Creation=======================================================
     # flat target--------------------------------------------------
-    eq1_path   = output_folder.joinpath(eq1_file)
+    target_type = "artificial"
+    eq1_path    = output_folder.joinpath(eq1_file)
+    eq_path_yml = output_folder.joinpath(eqyml_file)
 
+    write_eq_settings_yml0(eq_path_yml, target_type)
+    
     data = {'band_num':band_num,
             'file_path':file3_path,
             'out_path':eq1_path,
+            'out_path_yml':eq_path_yml,
+            'lr':lr,
             'model_str':model_str,
             'max_q':max_q,
             'min_q':min_q,
@@ -291,17 +303,25 @@ def calculate():
             'output_folder':output_folder,
             'target_on':False,
             'dip_alpha':dip_alpha,
+            'target_type':target_type,
             #'hrtf_path':'',
     }
     EqMake.eq_make(data)
     
+    fri_k1, fri_f1, diff = FriCalc.fri_calc(eq1_path, file3_path, file2_path, slope)
+    
+    write_eq_settings_yml2(eq_path_yml, target_type, diff)
+    
     # slope - equal loudness curve target-------------------------------------
+    target_type = "natural"
     eq2_path   = output_folder.joinpath(eq2_file)
     
     data2 = {'band_num':band_num,
             #'file_path':out_path,
             'file_path':file3_path,
             'out_path':eq2_path,
+            'out_path_yml':eq_path_yml,
+            'lr':lr,
             'model_str':model_str,
             'max_q':max_q,
             'min_q':min_q,
@@ -315,9 +335,16 @@ def calculate():
             'output_folder':output_folder,
             'target_on':True,
             'dip_alpha':dip_alpha,
+            'target_type':target_type,
             #'hrtf_path':hrtf_path,
     }
     EqMake.eq_make(data2)
+    
+    fri_k1, fri_f1, diff = FriCalc.fri_calc(eq2_path, file3_path, file2_path, slope)
+    
+    write_eq_settings_yml2(eq_path_yml, target_type, diff)
+    
+    write_eq_settings_yml3(eq_path_yml, lr, band_num)
     
     #Calculate gain increase/decrease after applying EQ filter in EqCalc.py===========================
     print("================================================")
@@ -383,6 +410,8 @@ def main():
         'band_num': ' Band Number',
         'eq1_file': ' EQ (artificial flat target) File Name',
         'eq2_file': ' EQ (natural flat target) File Name',
+        'eq_file_yml': ' EQ data file .yml (for Mac)',
+        'lr': ' Left or Right',
         'max_q': ' Max Q [-]',
         'min_q': ' Min Q [-]',
         'default_q': ' Default Q [-]',
@@ -405,6 +434,8 @@ def main():
         'band_num': 'Number of EQ Bands',
         'eq1_file': 'File name for saving EQ data (artificial flat target)',
         'eq2_file': 'File name for saving EQ data (natural flat target)',
+        'eq_file_yml': 'EQ data file .yml (for Mac)',
+        'lr': 'Left speaker or Right speaker ["L" or "R"]',   
         'max_q': 'Maximum Q factor',
         'min_q': 'Minimum Q factor',
         'default_q': 'Q factor to be set for now in case of calculation error',

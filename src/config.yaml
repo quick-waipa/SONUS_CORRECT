@@ -5,12 +5,14 @@ dip_alpha: '1'
 eloud_file: ../data/ISO_226_2023_75phon.txt
 eq1_file: eq_1.txt
 eq2_file: eq_2.txt
+eq_file_yml: eq_R.yml
 high_cutoff1: 5000.0
 high_cutoff2: 3000.0
 hrtf_file: ''
 k_file: ../data/ISO_226_2023_75phon.txt
 low_cutoff1: 80.0
 low_cutoff2: 80.0
+lr: R
 max_q: 8.0
 min_q: 1.0
 model_str: R MSP3

@@ -14,7 +14,7 @@ from scipy.interpolate import interp1d
 from scipy.signal import find_peaks
 
 from Math import linear_interpolation, gaussian_function, apply_curve, calculate_eq_curve
-from Utils import read_fr_data, remove_duplicates
+from Utils import read_fr_data, remove_duplicates, read_fri_diff, write_eq_settings_yml1
 
 
 def interpolate_gain(df, target_freq):
@@ -278,8 +278,7 @@ def write_eq_settings(fs, gs, qs, out_path, model_str):
             q    = qs[i]
             n    = i + 1
             file.write(f"Filter {n}: ON  PK  Fc  {freq:.2f} Hz  Gain  {gain:.2f} dB  Q  {q:.3f}\n")    
-
-
+                
 def eq_make(data):
     
     #INPUT================================================================
@@ -288,6 +287,8 @@ def eq_make(data):
 
     file_path = data['file_path'] 
     out_path  = data['out_path'] #eq filter
+    out_path_yml = data['out_path_yml']
+    lr = data['lr']
     model_str = data['model_str'] 
 
     max_q     = data['max_q'] 
@@ -308,6 +309,8 @@ def eq_make(data):
     target_on = data['target_on']
     
     dip_alpha = data['dip_alpha']
+    
+    target_type = data['target_type']
     
     #hrtf_path = data['hrtf_path']
 
@@ -393,6 +396,7 @@ def eq_make(data):
     
     # write eq settings
     write_eq_settings(f0s, eq_gains, q_factors, out_path, model_str)
+    write_eq_settings_yml1(f0s, eq_gains, q_factors, out_path_yml, target_type)
     
     gains = df_curve['gain']
     
