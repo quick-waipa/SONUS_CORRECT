@@ -21,7 +21,7 @@ import Utils
 
 from Utils import write_eq_settings_yml0, write_eq_settings_yml2, write_eq_settings_yml3
 
-Ver = "1.10"
+Ver = "1.11"
 
 def config_file_path(relative_path: str) -> str:
     base_path = os.path.abspath(".")

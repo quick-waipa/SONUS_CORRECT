@@ -132,6 +132,11 @@ def write_eq_settings_yml2(out_path, target_type, g_diff):
                    f"    type: Gain\n" +
                    f"    parameters:\n" +
                    f"      gain: {g_diff}\n")
+        title= target_type + "_gain"   
+        file.write(f"  {title}_for_alpha:\n" +
+                   f"    type: Gain\n" +
+                   f"    parameters:\n" +
+                   f"      gain: {-6.0}\n")
 
 def write_eq_settings_yml3(out_path, lr, band_num):
             
@@ -160,3 +165,4 @@ def write_eq_settings_yml3(out_path, lr, band_num):
             else:
                 title= "natural" + "_gain"
             file.write(f"      - {title}\n")
+            file.write(f"      - {title}_for_alpha\n")
