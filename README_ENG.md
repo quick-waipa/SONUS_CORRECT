@@ -6,7 +6,7 @@
 [日本語版 README はこちら](https://github.com/quick-waipa/SONUS_CORRECT/blob/main/README.md)  
     
 ***
-- Ver.1.11 2025/10/05
+- Ver.1.11 2025/10/04
    - Revised calculation formula for gain values corresponding to α values
 - Ver.1.10 2025/09/22
    - Added support for generating output data (.yml files) for macOS
@@ -184,3 +184,4 @@ The table below shows the values of α and the corresponding Gain values.
 ## License
 Copyright (c) 2024-2025 Quick-Waipa  
 This software is released under the MIT License, see LICENSE.
+
