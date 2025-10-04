@@ -6,7 +6,7 @@
 [English README is here](https://github.com/quick-waipa/SONUS_CORRECT/blob/main/README_ENG.md)  
     
 ***
-- Ver.1.11 2025/10/05
+- Ver.1.11 2025/10/04
    - αの値に対応するgainの値の計算式修正
 - Ver.1.10 2025/09/22
    - MacOS用の出力データ(.ymlファイル)を作成出来るようにした
@@ -185,3 +185,4 @@ Gain_{natural}=6log_{2}(1-\alpha)
 ## ライセンス
 Copyright (c) 2024-2025 Quick-Waipa  
 This software is released under the MIT License, see LICENSE.
+
