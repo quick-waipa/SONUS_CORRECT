@@ -221,6 +221,10 @@ filters:
     type: Gain
     parameters:
       gain: -3.1753490448904578
+  artificial_gain_for_alpha:
+    type: Gain
+    parameters:
+      gain: -6.0
   natural_eq1:
     type: Biquad
     parameters:
@@ -246,195 +250,199 @@ filters:
     type: Biquad
     parameters:
       type: Peaking
-      freq: 80.15
-      q: 8.000
-      gain: -7.31
-  natural_eq5:
-    type: Biquad
-    parameters:
-      type: Peaking
       freq: 141.22
       q: 4.000
-      gain: -5.81
-  natural_eq6:
+      gain: -5.93
+  natural_eq5:
     type: Biquad
     parameters:
       type: Peaking
       freq: 1512.33
       q: 4.000
       gain: 5.58
-  natural_eq7:
+  natural_eq6:
     type: Biquad
     parameters:
       type: Peaking
       freq: 333.96
-      q: 3.075
-      gain: 4.62
-  natural_eq8:
+      q: 3.074
+      gain: 4.61
+  natural_eq7:
     type: Biquad
     parameters:
       type: Peaking
       freq: 785.38
       q: 4.000
       gain: -4.09
-  natural_eq9:
+  natural_eq8:
     type: Biquad
     parameters:
       type: Peaking
       freq: 615.14
       q: 2.843
       gain: 4.11
-  natural_eq10:
+  natural_eq9:
     type: Biquad
     parameters:
       type: Peaking
       freq: 281.15
       q: 1.000
-      gain: -4.18
-  natural_eq11:
-    type: Biquad
-    parameters:
-      type: Peaking
-      freq: 92.60
-      q: 1.000
-      gain: -3.54
-  natural_eq12:
-    type: Biquad
-    parameters:
-      type: Peaking
-      freq: 116.28
-      q: 3.205
-      gain: 5.77
-  natural_eq13:
-    type: Biquad
-    parameters:
-      type: Peaking
-      freq: 176.35
-      q: 3.067
-      gain: 3.67
-  natural_eq14:
+      gain: -4.19
+  natural_eq10:
     type: Biquad
     parameters:
       type: Peaking
       freq: 333.96
-      q: 2.930
-      gain: 3.44
-  natural_eq15:
+      q: 2.932
+      gain: 3.46
+  natural_eq11:
     type: Biquad
     parameters:
       type: Peaking
       freq: 1139.35
       q: 8.000
-      gain: -3.44
-  natural_eq16:
+      gain: -3.45
+  natural_eq12:
     type: Biquad
     parameters:
       type: Peaking
       freq: 371.12
-      q: 1.053
-      gain: -3.11
+      q: 1.037
+      gain: -3.14
+  natural_eq13:
+    type: Biquad
+    parameters:
+      type: Peaking
+      freq: 176.35
+      q: 3.089
+      gain: 3.83
+  natural_eq14:
+    type: Biquad
+    parameters:
+      type: Peaking
+      freq: 101.21
+      q: 3.527
+      gain: -3.01
+  natural_eq15:
+    type: Biquad
+    parameters:
+      type: Peaking
+      freq: 114.99
+      q: 3.032
+      gain: 3.96
+  natural_eq16:
+    type: Biquad
+    parameters:
+      type: Peaking
+      freq: 163.16
+      q: 1.326
+      gain: -3.01
   natural_eq17:
     type: Biquad
     parameters:
       type: Peaking
-      freq: 333.96
-      q: 2.871
-      gain: 2.96
+      freq: 247.44
+      q: 3.001
+      gain: 3.35
   natural_eq18:
     type: Biquad
     parameters:
       type: Peaking
-      freq: 80.15
-      q: 2.773
-      gain: 2.90
+      freq: 333.96
+      q: 2.825
+      gain: 2.51
   natural_eq19:
     type: Biquad
     parameters:
       type: Peaking
-      freq: 92.60
-      q: 1.000
-      gain: -3.78
+      freq: 305.57
+      q: 1.486
+      gain: -2.81
   natural_eq20:
     type: Biquad
     parameters:
       type: Peaking
-      freq: 80.15
-      q: 2.852
-      gain: 3.46
+      freq: 615.14
+      q: 2.629
+      gain: 2.63
   natural_eq21:
     type: Biquad
     parameters:
       type: Peaking
-      freq: 88.09
-      q: 1.000
-      gain: -2.46
+      freq: 668.57
+      q: 5.230
+      gain: -3.75
   natural_eq22:
     type: Biquad
     parameters:
       type: Peaking
-      freq: 111.85
-      q: 2.943
-      gain: 3.50
+      freq: 333.96
+      q: 2.797
+      gain: 2.46
   natural_eq23:
     type: Biquad
     parameters:
       type: Peaking
-      freq: 247.44
-      q: 2.914
-      gain: 2.48
+      freq: 1301.77
+      q: 7.945
+      gain: -2.26
   natural_eq24:
     type: Biquad
     parameters:
       type: Peaking
-      freq: 305.57
-      q: 1.490
-      gain: -2.80
+      freq: 176.35
+      q: 2.879
+      gain: 2.24
   natural_eq25:
     type: Biquad
     parameters:
       type: Peaking
-      freq: 615.14
-      q: 2.631
-      gain: 2.64
+      freq: 315.92
+      q: 1.734
+      gain: -2.34
   natural_eq26:
     type: Biquad
     parameters:
       type: Peaking
-      freq: 668.57
-      q: 5.227
-      gain: -3.75
+      freq: 615.14
+      q: 2.528
+      gain: 2.26
   natural_eq27:
     type: Biquad
     parameters:
       type: Peaking
       freq: 333.96
-      q: 2.764
-      gain: 2.26
+      q: 2.704
+      gain: 1.92
   natural_eq28:
     type: Biquad
     parameters:
       type: Peaking
-      freq: 1301.77
-      q: 7.948
-      gain: -2.26
+      freq: 355.00
+      q: 1.723
+      gain: -2.12
   natural_eq29:
     type: Biquad
     parameters:
       type: Peaking
-      freq: 315.92
-      q: 1.852
-      gain: -2.09
+      freq: 333.96
+      q: 2.725
+      gain: 2.03
   natural_eq30:
     type: Biquad
     parameters:
       type: Peaking
-      freq: 247.44
-      q: 2.873
-      gain: 2.46
+      freq: 315.92
+      q: 1.912
+      gain: -1.95
   natural_gain:
     type: Gain
     parameters:
-      gain: -0.7953805891408807
+      gain: -1.2174680013758765
+  natural_gain_for_alpha:
+    type: Gain
+    parameters:
+      gain: -6.0
 
 pipeline:
   - type: Filter
@@ -471,6 +479,7 @@ pipeline:
       - artificial_eq29
       - artificial_eq30
       - artificial_gain
+      - artificial_gain_for_alpha
   - type: Filter
     channel: 5
     names:
@@ -505,3 +514,4 @@ pipeline:
       - natural_eq29
       - natural_eq30
       - natural_gain
+      - natural_gain_for_alpha
