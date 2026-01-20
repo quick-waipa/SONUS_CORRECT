@@ -1,7 +1,7 @@
 # SONUS CORRECT
 ![OutputImage](output/plot_natural_flat_target.png)
 
-[Related Articles](https://quickwaipa.com/sonus_correct/sonus_correct.html)
+[Related Articles](https://quickwaipa.com/sonus_correct/)
 
 [日本語版 README はこちら](https://github.com/quick-waipa/SONUS_CORRECT/blob/main/README.md)  
     
@@ -184,4 +184,5 @@ The table below shows the values of α and the corresponding Gain values.
 ## License
 Copyright (c) 2024-2025 Quick-Waipa  
 This software is released under the MIT License, see LICENSE.
+
 
