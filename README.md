@@ -1,7 +1,7 @@
 # SONUS CORRECT
 ![OutputImage](output/plot_natural_flat_target.png)
 
-[関連記事一覧](https://quickwaipa.com/sonus_correct/sonus_correct.html)
+[関連記事一覧](https://quickwaipa.com/sonus_correct/)
     
 [English README is here](https://github.com/quick-waipa/SONUS_CORRECT/blob/main/README_ENG.md)  
     
@@ -185,4 +185,5 @@ Gain_{natural}=6log_{2}(1-\alpha)
 ## ライセンス
 Copyright (c) 2024-2025 Quick-Waipa  
 This software is released under the MIT License, see LICENSE.
+
 
